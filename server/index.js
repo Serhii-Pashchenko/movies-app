@@ -13,14 +13,7 @@ const PORT = process.env.PORT || 5003;
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-// app.use(cors({ credentials: true, origin: process.env.CLIENT_URL }));
-app.use((req, res, next) => {
-  res.header(
-    'Access-Control-Allow-Origin',
-    'https://serhii-pashchenko-movies.vercel.app'
-  );
-  next();
-});
+app.use(cors({ credentials: true, origin: process.env.CLIENT_URL }));
 
 app.use('/api', userRoutes);
 
