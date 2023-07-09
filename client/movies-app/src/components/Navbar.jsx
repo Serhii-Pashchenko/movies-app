@@ -22,7 +22,7 @@ export default function Navbar({ isScrolled, onSearch }) {
   const handleLogout = async () => {
     localStorage.removeItem('token');
     navigate('/login');
-    await axios.post('http://localhost:5000/api/logout');
+    await axios.post('https://movies-app-omega-snowy.vercel.app/api/logout');
   };
 
   const handleSearchSubmit = (e) => {

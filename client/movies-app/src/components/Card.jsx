@@ -31,7 +31,7 @@ export default React.memo(function Card({ index, movieData, isLiked = false }) {
     const email = localStorage.getItem('email');
     try {
       await axios.post(
-        'http://localhost:5000/api/add',
+        'https://movies-app-omega-snowy.vercel.app/api/add',
         {
           email,
           data: movieData,

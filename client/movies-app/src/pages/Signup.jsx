@@ -17,7 +17,7 @@ export default function Signup() {
     try {
       const { email, password } = formValues;
       const response = await axios.post(
-        'http://localhost:5000/api/registration',
+        'https://movies-app-omega-snowy.vercel.app/api/registration',
         {
           email,
           password,

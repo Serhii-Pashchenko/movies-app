@@ -141,11 +141,14 @@ export const getUsersLikedMovies = createAsyncThunk(
     const token = localStorage.getItem('token');
     const {
       data: { movies },
-    } = await axios.get(`http://localhost:5000/api/liked/${email}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    } = await axios.get(
+      `https://movies-app-omega-snowy.vercel.app/api/liked/${email}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     return movies;
   }
 );
@@ -158,7 +161,7 @@ export const removeMovieFromLiked = createAsyncThunk(
     const {
       data: { movies },
     } = await axios.put(
-      'http://localhost:5000/api/remove',
+      'https://movies-app-omega-snowy.vercel.app/api/remove',
       {
         email,
         movieId,
