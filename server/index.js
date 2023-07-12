@@ -7,7 +7,7 @@ const userRoutes = require('./routes/UserRoutes');
 const path = require('path');
 const errorHandler = require('./middleware/ErrorHandlingMiddleware');
 
-dotenv.config({ path: `.${process.env.NODE_ENV}.env` });
+dotenv.config();
 const PORT = process.env.PORT || 5003;
 
 const app = express();
