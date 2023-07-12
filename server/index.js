@@ -16,7 +16,7 @@ app.use(cookieParser());
 app.use(cors({ credentials: true, origin: process.env.CLIENT_URL }));
 
 app.get('/', (req, res) => {
-  res.send(`Server is running on port ${PORT}`);
+  res.send(`${process.env.DB_URL}`);
 });
 
 app.use('/api', userRoutes);
