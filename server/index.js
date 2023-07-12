@@ -15,10 +15,6 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors({ credentials: true, origin: process.env.CLIENT_URL }));
 
-app.get('/', (req, res) => {
-  res.send(`${process.env.DB_URL}`);
-});
-
 app.use('/api', userRoutes);
 
 app.use(errorHandler);
